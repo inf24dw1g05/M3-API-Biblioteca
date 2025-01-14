@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  api:
+    build: 
+      context: ./biblioteca-api
+      dockerfile: Dockerfile
+    image: inf24dw1gxx/biblioteca-api-2
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+
+  admin:
+    build:
+      context: ./biblioteca-admin
+      dockerfile: Dockerfile
+    image: inf24dw1gxx/biblioteca-admin-2
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
